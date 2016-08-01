@@ -12,7 +12,7 @@
       minutes  = seconds / 60
       seconds -= minutes * 60
     p.appointment_time 约会日期
-    h1.red.middle= @appointment.time.strftime("%Y年%m月%d日")
+    h2.red.middle= @appointment.time.strftime("%Y年%m月%d日")
     p= "距离一起玩耍还有"
     h1.red.countdown(data-left_seconds="#{@left_seconds}")
       .middle.days= "#{days}天"
