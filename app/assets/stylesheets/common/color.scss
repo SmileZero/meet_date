@@ -1,0 +1,8 @@
+$blue:        #3e98c5;
+$light-gray:  #e6e6e6;
+
+
+.gray       { color: gray !important; }
+.red        { color: red  !important;}
+.blue       { color: $blue !important;}
+.light-gray { color: $light-gray !important; }

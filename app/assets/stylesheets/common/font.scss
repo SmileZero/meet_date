@@ -1,0 +1,17 @@
+@for $i from 1 through 15 {
+  $n: ($i * 2);
+  .ft-#{$n} { font-size: #{$n}px; }
+}
+
+.font-bold {
+  font-weight:bold;
+}
+
+.font-shadow-b {
+  text-shadow: 2px 2px 0 #000;
+}
+
+.font-shadow-w {
+  text-shadow: 2px 2px 0 #fff;
+}
+

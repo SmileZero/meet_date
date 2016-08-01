@@ -1,0 +1,3 @@
+default:
+  seconds_per_hour: 3600
+  hours_per_day: 24

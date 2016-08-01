@@ -1,0 +1,14 @@
+.jumbotron
+  - if @days > 0
+    p.date_now
+      = "距离#{@appointment.time.strftime("%Y年%m月%d日")}见到你还有"
+    h1.middle.red
+      = "#{@days} 天"
+  - elsif @days == 0
+    p.date_now
+      = "今天是#{Date.current.strftime("%Y年%m月%d日")}"
+    h1.middle 想马上就见到你
+  - else
+    p.date_now
+      = "今天是#{Date.current.strftime("%Y年%m月%d日")}"
+    h1.middle 是不是又在想我了
