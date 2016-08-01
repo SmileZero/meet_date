@@ -1,13 +1,21 @@
 .jumbotron
-  - if @days > 0
+  - if @left_seconds >= 0
+    ruby:
+      seconds  = @left_seconds
+
+      days     = @left_seconds / Global.time.seconds_per_hour / Global.time.hours_per_day
+      seconds -= days * Global.time.hours_per_day * Global.time.seconds_per_hour
+
+      hours    = seconds / Global.time.seconds_per_hour
+      seconds -= hours * Global.time.seconds_per_hour
+
+      minutes  = seconds / 60
+      seconds -= minutes * 60
     p.date_now
       = "距离#{@appointment.time.strftime("%Y年%m月%d日")}见到你还有"
-    h1.middle.red
-      = "#{@days} 天"
-  - elsif @days == 0
-    p.date_now
-      = "今天是#{Date.current.strftime("%Y年%m月%d日")}"
-    h1.middle 想马上就见到你
+    h1.red.countdown(data-left_seconds="#{@left_seconds}")
+      .middle.days= "#{days}天"
+      .middle.seconds= "%02d:%02d:%02d" % [hours, minutes, seconds]
   - else
     p.date_now
       = "今天是#{Date.current.strftime("%Y年%m月%d日")}"

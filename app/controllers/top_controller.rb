@@ -1,13 +1,11 @@
 class TopController < ApplicationController
   def index
-    @days = left_days
+    @left_seconds = left_seconds
   end
 
 private
-  def left_days
+  def left_seconds
     return -1 unless @appointment = Appointment.order(time: :desc).last
-    hours = (@appointment.time - Time.current) / Global.time.seconds_per_hour
-    days  = hours / 24
-    days.to_i
+    (@appointment.time - Time.current).to_i
   end
 end
