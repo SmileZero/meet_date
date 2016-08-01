@@ -10,5 +10,17 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile << [ Proc.new { |filename, path| path =~ /app\/assets/ && !%w(.js .css).include?(File.extname(filename)) },
-/application.(css|js)$/ ]
+Rails.application.config.assets.precompile << Proc.new do |filename, path|
+  if %w(.js .css).include?(File.extname(filename)
+    app_assets_path = Rails.root.join('app', 'assets').to_s
+    if path.start_with? app_assets_path
+      puts "including asset: " + path
+      true
+    else
+      puts "excluding asset: " + path
+      false
+    end
+  else
+    false
+  end
+end
