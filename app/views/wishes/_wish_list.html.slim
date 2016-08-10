@@ -1,5 +1,5 @@
 - Wish.all.each.with_index(1) do |wish, index|
-  li.list-group-item.row.wish
+  li.list-group-item.row.wish(onclick="void(0)")
     .col-md-1.col-xs-2= index
     .col-md-11.col-xs-10= simple_format wish.content
     .remove.pull-right
