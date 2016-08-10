@@ -13,7 +13,7 @@ li.wish_list {
   display: none;
 }
 
-.wish:hover {
+.wish:hover, .wish:active, .wish:focus {
   background-color: #f7f7f9;
   .remove, .edit {
     visibility: visible;
