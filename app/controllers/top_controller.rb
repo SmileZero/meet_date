@@ -1,6 +1,7 @@
 class TopController < ApplicationController
   def index
     @left_seconds = left_seconds
+    @wish = Wish.new
   end
 
 private

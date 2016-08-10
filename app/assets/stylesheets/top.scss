@@ -1,0 +1,22 @@
+// Place all the styles related to the MeetDateController controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+li.wish_list {
+  list-style: none;
+}
+
+.wish .remove {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: none;
+}
+
+.wish:hover {
+  background-color: #f7f7f9;
+  .remove, .edit {
+    visibility: visible;
+    display: block;
+  }
+}

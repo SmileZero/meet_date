@@ -21,3 +21,17 @@
     p.date_now
       = "今天是#{Date.current.strftime("%Y年%m月%d日")}"
     h1.middle 是不是又在想我了
+
+hr
+
+h3 我们的愿望清单
+.container
+  ul.list-group.wish_list
+    = render "wishes/wish_list"
+    li.list-group-item.row
+      = simple_form_for @wish, remote: true do |f|
+        = f.input :content, label: false, placeholder: "写下想一起做的事情吧~", required: true
+        button.btn.btn-default(type="submit")
+          span.glyphicon.glyphicon-pencil(aria-hidden="true")
+          | 记下来
+hr

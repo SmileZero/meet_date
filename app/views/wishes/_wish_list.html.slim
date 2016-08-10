@@ -1,0 +1,7 @@
+- Wish.all.each.with_index(1) do |wish, index|
+  li.list-group-item.row.wish
+    .col-md-1.col-xs-2= index
+    .col-md-11.col-xs-10= simple_format wish.content
+    .remove.pull-right
+      = link_to wish_path(wish), method: :delete, remote:true, class: "red", data: {confirm: "要狠心删除它么?"}  do
+        span.glyphicon.glyphicon-trash
