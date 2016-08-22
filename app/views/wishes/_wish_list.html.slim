@@ -2,6 +2,10 @@
   li.list-group-item.row.wish(onclick="void(0)")
     .col-md-1.col-xs-2= index
     .col-md-11.col-xs-10= simple_format wish.content
-    .remove.pull-right
-      = link_to wish_path(wish), method: :delete, remote:true, class: "red", data: {confirm: "要狠心删除它么?"}  do
-        span.glyphicon.glyphicon-trash
+    .operations.pull-right
+      span.edit.mr-5
+        = link_to edit_wish_path(wish), remote:true, class: "blue"  do
+          span.glyphicon.glyphicon-edit
+      span.remove
+        = link_to wish_path(wish), method: :delete, remote:true, class: "red", data: {confirm: "要狠心删除它么?"}  do
+          span.glyphicon.glyphicon-trash

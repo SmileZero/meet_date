@@ -1,0 +1,12 @@
+= simple_form_for @wish, remote: true do |f|
+  = f.input :content, label: false, placeholder: "写下想一起做的事情吧~", required: true
+  button.btn.btn-default.mr-5(type="submit")
+    - if @wish.persisted?
+      span.fa.fa-floppy-o(aria-hidden="true")
+        | 改一下
+    - else
+      span.fa.fa-pencil(aria-hidden="true")
+        | 记下来
+  = link_to new_wish_path, remote: true, class: "btn btn-default" do
+      span.fa.fa-eraser(aria-hidden="true")
+        | 重来

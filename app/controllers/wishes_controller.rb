@@ -1,11 +1,19 @@
 class WishesController < ApplicationController
-  before_action :set_wish, only: [:update, :destroy]
+  before_action :set_wish, only: [:edit, :update, :destroy]
+
+  def new
+    @wish = Wish.new
+  end
 
   def create
     @wish = Wish.new wish_params
     if @wish.save
     else
     end
+  end
+
+  def edit
+    render "new"
   end
 
   def update

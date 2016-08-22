@@ -24,14 +24,12 @@
 
 hr
 
-h3 我们的愿望清单
+h3
+  span 我们的愿望清单
+  span.fa.fa-heart.red
 .container
   ul.list-group.wish_list
     = render "wishes/wish_list"
-    li.list-group-item.row
-      = simple_form_for @wish, remote: true do |f|
-        = f.input :content, label: false, placeholder: "写下想一起做的事情吧~", required: true
-        button.btn.btn-default(type="submit")
-          span.glyphicon.glyphicon-pencil(aria-hidden="true")
-          | 记下来
+    li.list-group-item.row.wish_form
+      = render "wishes/wish_form"
 hr

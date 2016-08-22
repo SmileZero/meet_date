@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   get 'top/index'
 
-  resources :wishes, only: [:create, :update, :destroy]
+  resources :wishes, only: [:new, :create, :edit, :update, :destroy]
 end

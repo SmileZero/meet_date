@@ -6,7 +6,7 @@ li.wish_list {
   list-style: none;
 }
 
-.wish .remove {
+.wish .operations {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -15,7 +15,7 @@ li.wish_list {
 
 .wish:hover, .wish:active, .wish:focus {
   background-color: #f7f7f9;
-  .remove, .edit {
+  .operations {
     visibility: visible;
     display: block;
   }
