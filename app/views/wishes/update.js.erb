@@ -2,6 +2,7 @@ if ("activeElement" in document) {
   document.activeElement.blur();
 }
 
-$("#wish_content").val("")
 $(".wish").remove();
 $(".wish_list").prepend("<%=j render 'wishes/wish_list' %>")
+
+$(".wish_form").html("<%=j render 'wish_form' %>")

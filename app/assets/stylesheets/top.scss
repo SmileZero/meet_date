@@ -6,6 +6,11 @@ li.wish_list {
   list-style: none;
 }
 
+.wish .content{
+  padding-right: 40px;
+  word-wrap: break-word;
+}
+
 .wish .operations {
   position: absolute;
   top: 15px;

@@ -1,5 +1,5 @@
 = simple_form_for @wish, remote: true do |f|
-  = f.input :content, label: false, placeholder: "写下想一起做的事情吧~", required: true
+  = f.input :content, label: false, placeholder: "写下想一起做的事情吧~", class: "required", error: ''
   button.btn.btn-default.mr-5(type="submit")
     - if @wish.persisted?
       span.fa.fa-floppy-o(aria-hidden="true")

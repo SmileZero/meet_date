@@ -9,6 +9,7 @@ class WishesController < ApplicationController
     @wish = Wish.new wish_params
     if @wish.save
     else
+      render "error.js.erb"
     end
   end
 
@@ -17,6 +18,11 @@ class WishesController < ApplicationController
   end
 
   def update
+    if @wish.update wish_params
+      @wish = Wish.new
+    else
+      render "error.js.erb"
+    end
   end
 
   def destroy
