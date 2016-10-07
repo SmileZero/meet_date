@@ -6,7 +6,7 @@ class TopController < ApplicationController
 
 private
   def left_seconds
-    return -1 unless @appointment = Appointment.order(time: :desc).last
+    return -1 unless @appointment = Appointment.available.order(:time).first
     (@appointment.time - Time.current).to_i
   end
 end

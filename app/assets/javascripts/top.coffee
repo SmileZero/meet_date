@@ -27,6 +27,7 @@ $ ->
     else
       duration = 0
       $('.countdown .days').text("0天")
-      $('.countdown .seconds').text("00:00:00:")
+      $('.countdown .seconds').text("00:00:00")
+      location.reload()
 
   InterValObj = window.setInterval(setRemainTime, 1000)

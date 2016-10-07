@@ -13,4 +13,8 @@
 #
 
 class Appointment < ActiveRecord::Base
+  scope :available, ->(now = nil) do
+    now ||= Time.current
+    where(arel_table[:time].gteq(now))
+  end
 end
